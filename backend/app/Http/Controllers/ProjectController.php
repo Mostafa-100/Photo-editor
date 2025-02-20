@@ -10,9 +10,9 @@ use Illuminate\Http\Request;
 
 class ProjectController extends Controller
 {
-  public function getUserProjects(Request $request)
+  public function index()
   {
-    $projects = $request->user()->projects()->get();
+    $projects = auth()->user()->projects()->paginate(20);
 
     if ($projects->isEmpty()) {
       return response()->json(['error' => 'No projects for this user'], 404);
@@ -23,7 +23,7 @@ class ProjectController extends Controller
 
   public function store(StoreProjectRequest $request)
   {
-    $project = $request->all();
+    $project = $request->validated();
 
     $project['user_id'] = $request->user()->id;
 

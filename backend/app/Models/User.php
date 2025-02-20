@@ -51,4 +51,9 @@ class User extends Authenticatable
   {
     return $this->hasMany(Project::class);
   }
+
+  public function uploadedImages()
+  {
+    return $this->hasMany(UploadedImage::class);
+  }
 }
