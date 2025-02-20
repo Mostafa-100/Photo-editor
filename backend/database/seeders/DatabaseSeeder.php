@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\DefaultImage;
 use App\Models\Project;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
@@ -24,5 +25,15 @@ class DatabaseSeeder extends Seeder
     ]);
 
     Project::factory(10)->create();
+
+    $defaultImages = [
+      ['path' => 'default-images/NRQV-hBF10M-unsplash.jpg', 'owner_fullname' => 'bailey zindel'],
+      ['path' => 'default-images/d4feocYfzAM-unsplash.jpg', 'owner_fullname' => 'damiano baschiera'],
+      ['path' => 'default-images/h5wvMCdOV3w-unsplash.jpg', 'owner_fullname' => 'goutham krishna'],
+      ['path' => 'default-images/EwKXn5CapA4-unsplash.jpg', 'owner_fullname' => 'jeremy bishop'],
+      ['path' => 'default-images/mWRR1xj95hg-unsplash.jpg', 'owner_fullname' => 'christian joudrey'],
+    ];
+
+    DefaultImage::insert($defaultImages);
   }
 }
