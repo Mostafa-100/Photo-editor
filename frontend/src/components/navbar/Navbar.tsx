@@ -16,7 +16,7 @@ function Navbar() {
               <span>File</span>
               <ChevronDown size={19} />
             </DropdownMenuTrigger>
-            <DropdownMenuContent className="bg-white p-3 rounded-sm shadow-sm">
+            <DropdownMenuContent className="bg-white p-3 rounded-sm shadow-sm z-50 hover:bg-neutral-200 transition-colors">
               <DropdownMenuItem className="flex items-center outline-0 cursor-pointer gap-x-1">
                 <File />
                 <div className="flex flex-col">
