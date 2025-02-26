@@ -12,7 +12,7 @@ class DefaultImageController extends Controller
     $defaultImages = DefaultImage::all();
 
     if ($defaultImages->isEmpty()) {
-      return response()->json(['error' => 'There is no default images'], 404);
+      return response()->json(['message' => 'There is no default images'], 404);
     }
 
     return DefaultImageResource::collection($defaultImages);

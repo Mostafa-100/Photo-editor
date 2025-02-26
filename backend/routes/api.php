@@ -3,6 +3,7 @@
 use App\Http\Controllers\DefaultImageController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\UploadedImageController;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Storage;

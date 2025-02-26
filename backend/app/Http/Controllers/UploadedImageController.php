@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreUploadedImage;
 use App\Http\Resources\UploadedImageResource;
 use App\Models\UploadedImage;
-use Illuminate\Http\Request;
 
 class UploadedImageController extends Controller
 {
@@ -14,7 +13,7 @@ class UploadedImageController extends Controller
     $uploadedImages = auth()->user()->uploadedImages()->get();
 
     if ($uploadedImages->isEmpty()) {
-      return response()->json(['error' => 'No uploaded images for this user'], 404);
+      return response()->json(['message' => 'No uploaded images for this user'], 404);
     }
 
     return UploadedImageResource::collection($uploadedImages);

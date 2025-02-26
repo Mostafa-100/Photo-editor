@@ -6,7 +6,6 @@ use App\Http\Requests\StoreProjectRequest;
 use App\Http\Requests\UpdateProjectRequest;
 use App\Http\Resources\ProjectResource;
 use App\Models\Project;
-use Illuminate\Http\Request;
 
 class ProjectController extends Controller
 {
@@ -15,7 +14,7 @@ class ProjectController extends Controller
     $projects = auth()->user()->projects()->paginate(20);
 
     if ($projects->isEmpty()) {
-      return response()->json(['error' => 'No projects for this user'], 404);
+      return response()->json(['message' => 'No projects for this user'], 404);
     }
 
     return ProjectResource::collection($projects);

@@ -12,9 +12,9 @@ return new class extends Migration
   public function up(): void
   {
     Schema::create('templates', function (Blueprint $table) {
-      $table->id();
+      $table->uuid('id')->primary();
       $table->json('content');
-      $table->string('title')->default('Untitled project');
+      $table->string('title');
       $table->integer('width');
       $table->integer('height');
       $table->timestamps();
