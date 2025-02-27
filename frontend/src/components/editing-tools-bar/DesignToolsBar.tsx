@@ -2,14 +2,14 @@ import ImageTools from "./ImageTools";
 import ShapeTools from "./ShapeTools";
 import TextTools from "./TextTools";
 
-function ToolsBar() {
+function DesignToolsBar() {
   return (
-    <nav className="bg-white py-2 px-3 w-full">
-      {/* <TextTools /> */}
+    <nav className="bg-white py-2 px-3 w-full height-[53px]">
+      <TextTools />
       {/* <ShapeTools /> */}
-      <ImageTools />
+      {/* <ImageTools /> */}
     </nav>
   )
 }
 
-export default ToolsBar;
+export default DesignToolsBar;

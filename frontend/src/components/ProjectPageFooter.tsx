@@ -1,7 +1,7 @@
 import { ZoomIn, ZoomOut } from "lucide-react";
 
 type ProjectPageFooterProps = {
-  className: string;
+  className?: string;
 }
 
 function ProjectPageFooter({ className }: ProjectPageFooterProps) {

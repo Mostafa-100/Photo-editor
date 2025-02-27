@@ -1,15 +1,15 @@
 import CanvasPlace from "./CanvasPlace";
 import ProjectPageFooter from "./ProjectPageFooter";
-import ToolsBar from "./editing-tools-bar/DesignToolsBar";
+import DesignToolsBar from "./editing-tools-bar/DesignToolsBar";
 
 function CanvasContainer() {
   return (
-    <div className="relative h-[calc(100vh-57px)] bg-neutral-200 w-full">
-      <ToolsBar />
-      <div className="flex justify-center mt-4">
+    <div className="w-full">
+      <DesignToolsBar />
+      <div className="h-[calc(100%-86px)] grid place-items-center bg-neutral-200">
         <CanvasPlace />
       </div>
-      <ProjectPageFooter className="sticky top-full left-0 w-full" />
+      <ProjectPageFooter />
     </div>
   )
 }

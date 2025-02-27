@@ -1,8 +1,8 @@
 import HeaderOfTool from "../HeaderOfTool";
 import Shape from "./Shape";
-import shapesData from "./ShapesData";
+import shapesData from "./shapesData";
 
-function Shapes() {
+function ShapesToolbar() {
   return (
     <>
       <HeaderOfTool title="Shapes" description="Add shapes to your canvas" />
@@ -15,4 +15,4 @@ function Shapes() {
   )
 }
 
-export default Shapes;
+export default ShapesToolbar;

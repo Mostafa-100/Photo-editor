@@ -1,7 +1,6 @@
-
 import { JSX } from "react";
 import TextToolbar from "./TextToolbar";
-import DesignToolbar from "./DesignToolbar";
+import DesignToolbar from "./DesignToolsbar";
 import ShapesToolsbar from "./shapes-toolbar/ShapesToolbar";
 import ImageToolbar from "./ImageToolbar";
 

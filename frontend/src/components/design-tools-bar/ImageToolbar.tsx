@@ -1,7 +1,7 @@
 import { Button } from "../ui/button";
 import HeaderOfTool from "./HeaderOfTool";
 
-function ImageTools() {
+function ImageToolbar() {
   return (
     <>
       <HeaderOfTool title="Images" description="Add images to your canvas" />
@@ -10,4 +10,4 @@ function ImageTools() {
   )
 }
 
-export default ImageTools;
+export default ImageToolbar;

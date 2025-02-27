@@ -1,7 +1,7 @@
 import { Button } from "../ui/button";
 import HeaderOfTool from "./HeaderOfTool";
 
-function TextForms() {
+function TextToolbar() {
   return (
     <>
       <HeaderOfTool title="Text" description="Add text to your canvas" />
@@ -15,4 +15,4 @@ function TextForms() {
   )
 }
 
-export default TextForms;
+export default TextToolbar;
