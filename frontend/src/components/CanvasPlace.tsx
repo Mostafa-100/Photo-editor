@@ -10,8 +10,8 @@ function CanvasPlace() {
   useEffect(() => {
     if (canvasRef.current) {
       const initCanvas = new Canvas(canvasRef.current, {
-        width: 300,
-        height: 400,
+        width: 330,
+        height: 420,
         backgroundColor: "#fff"
       });
 
