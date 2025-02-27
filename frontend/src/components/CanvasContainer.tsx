@@ -1,6 +1,6 @@
 import CanvasPlace from "./CanvasPlace";
 import ProjectPageFooter from "./ProjectPageFooter";
-import ToolsBar from "./design-tools-bar/DesignToolsBar";
+import ToolsBar from "./editing-tools-bar/DesignToolsBar";
 
 function CanvasContainer() {
   return (
