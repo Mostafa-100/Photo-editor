@@ -1,13 +1,24 @@
+import { setTheToolsToShow, showSidebar } from "@/redux/sidebarSlice";
 import { JSX } from "react";
+import { useDispatch } from "react-redux";
 
 type ButtonProps = {
   icon: JSX.Element;
   title: string;
+  keyName: string;
 }
 
-function Button({ icon, title }: ButtonProps) {
+function Button({ icon, title, keyName }: ButtonProps) {
+
+  const dispatch = useDispatch();
+
+  function addTheKeyInReduxState() {
+    dispatch(setTheToolsToShow(keyName));
+    dispatch(showSidebar(true));
+  }
+
   return (
-    <button className="flex flex-col px-2 py-3 cursor-pointer hover:bg-neutral-200 justify-center items-center">
+    <button className="flex flex-col px-2 py-3 cursor-pointer hover:bg-neutral-200 justify-center items-center" onClick={addTheKeyInReduxState}>
       <span className="">{icon}</span>
       <span className="text-xs">{title}</span>
     </button>

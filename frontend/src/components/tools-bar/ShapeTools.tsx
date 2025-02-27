@@ -1,4 +1,4 @@
-import { AlignJustify, ArrowDown, ArrowUp, Copy, Layers, Trash } from "lucide-react";
+import { AlignJustify, ArrowDown, ArrowUp, Copy, Layers, Paintbrush, Trash } from "lucide-react";
 import { Button } from "../ui/button";
 
 function ShapeTools() {
@@ -7,7 +7,7 @@ function ShapeTools() {
       <input type="color" className="size-7 rounded-sm" />
       <input type="color" className="size-7 rounded-sm" />
       <Button variant="ghost">
-        <AlignJustify className="h-4 w-4" />
+        <Paintbrush className="h-4 w-4" />
       </Button>
       <Button variant="ghost">
         <ArrowUp className="h-4 w-4" />
