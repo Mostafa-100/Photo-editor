@@ -1,8 +1,8 @@
 import { useSelector } from "react-redux";
 import { RootState } from "@/redux/store";
 
-import allToolsSidebar from "./allDesignTools";
-import HideDesignToolsButton from "./HideDesignToolsButton";
+import toolsData from "./toolsData";
+import HideVerticalToolbarButton from "./HideVerticalToolbarButton";
 
 function ToolsContainer() {
 
@@ -13,8 +13,8 @@ function ToolsContainer() {
       {
         isSidebarVisible &&
         <div className="relative w-[450px] bg-white px-4 py-5">
-          {allToolsSidebar[toolsToShow]}
-          <HideDesignToolsButton />
+          {toolsData[toolsToShow]}
+          <HideVerticalToolbarButton />
         </div>
       }
     </>

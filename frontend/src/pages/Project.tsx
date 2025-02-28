@@ -1,5 +1,5 @@
 import CanvasContainer from "@/components/CanvasContainer";
-import ToolsContainer from "@/components/design-tools-bar/ToolsContainer";
+import ToolsContainer from "@/components/vertical-toolbar/ToolsContainer";
 import Sidebar from "@/components/sidebar/Sidebar";
 
 function Project() {

@@ -1,8 +1,8 @@
-import ImageTools from "./ImageTools";
-import ShapeTools from "./ShapeTools";
+// import ImageTools from "./ImageTools";
+// import ShapeTools from "./ShapeTools";
 import TextTools from "./TextTools";
 
-function DesignToolsBar() {
+function HorizontalToolbar() {
   return (
     <nav className="bg-white py-2 px-3 w-full height-[53px]">
       <TextTools />
@@ -12,4 +12,4 @@ function DesignToolsBar() {
   )
 }
 
-export default DesignToolsBar;
+export default HorizontalToolbar;

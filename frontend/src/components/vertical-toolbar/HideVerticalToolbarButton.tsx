@@ -2,7 +2,7 @@ import { showSidebar } from "@/redux/sidebar";
 import { ChevronsLeft } from "lucide-react";
 import { useDispatch } from "react-redux";
 
-function HideDesignToolsButton() {
+function HideVerticalToolbarButton() {
 
   const dispatch = useDispatch();
 
@@ -15,4 +15,4 @@ function HideDesignToolsButton() {
   )
 }
 
-export default HideDesignToolsButton;
+export default HideVerticalToolbarButton;
