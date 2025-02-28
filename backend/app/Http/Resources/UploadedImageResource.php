@@ -17,7 +17,7 @@ class UploadedImageResource extends JsonResource
   {
     return [
       'id' => $this->id,
-      'path' => Storage::path($this->path),
+      'path' => asset('storage/' . $this->path),
     ];
   }
 }

@@ -17,7 +17,7 @@ class DefaultImageResource extends JsonResource
   {
     return [
       'id' => $this->id,
-      'path' => Storage::path($this->path),
+      'path' => asset('storage/' . $this->path),
       'owner_fullname' => $this->owner_fullname
     ];
   }
