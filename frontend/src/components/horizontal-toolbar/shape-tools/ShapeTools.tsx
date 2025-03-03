@@ -1,8 +1,10 @@
-import { ArrowDown, ArrowUp, Copy, Layers, Trash } from "lucide-react";
+import { ArrowUp, Copy, Layers, Trash } from "lucide-react";
 import ToolButton from "../ToolButton";
 import ChangeBackgroundColorButton from "./ChangeBackroundColorButton";
 import ChangeStrokeColorButton from "./ChangeBorderColorButton";
 import SetStrokeButton from "./SetStrokeButton";
+import BackwardButton from "./BackwardButton";
+import ForwardButton from "./ForwardButton";
 
 function ShapeTools() {
   return (
@@ -10,8 +12,8 @@ function ShapeTools() {
       <ChangeBackgroundColorButton />
       <ChangeStrokeColorButton />
       <SetStrokeButton />
-      <ToolButton icon={<ArrowUp className="h-4 w-4" />} />
-      <ToolButton icon={<ArrowDown className="h-4 w-4" />} />
+      <ForwardButton />
+      <BackwardButton />
       <ToolButton icon={<Layers className="h-4 w-4" />} />
       <ToolButton icon={<Copy className="h-4 w-4" />} />
       <ToolButton icon={<Trash className="h-4 w-4" />} />
