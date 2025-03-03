@@ -1,4 +1,4 @@
-import { setTheToolsToShow, showSidebar } from "@/redux/sidebar";
+import { setTheToolsToShow, showSidebar } from "@/redux/sidebar.ts";
 import { JSX } from "react";
 import { useDispatch } from "react-redux";
 

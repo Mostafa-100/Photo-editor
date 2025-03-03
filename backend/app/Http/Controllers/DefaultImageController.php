@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Resources\DefaultImageResource;
 use App\Models\DefaultImage;
+use Carbon\Carbon;
 
 class DefaultImageController extends Controller
 {

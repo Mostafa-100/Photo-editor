@@ -1,5 +1,6 @@
-import { Button } from "../ui/button";
-import HeaderOfTool from "./HeaderOfTool";
+import { Button } from "@/components/ui/button";
+import HeaderOfTool from "../HeaderOfTool";
+
 
 function TextToolbar() {
   return (

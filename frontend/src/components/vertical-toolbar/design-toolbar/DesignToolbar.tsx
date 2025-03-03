@@ -1,4 +1,4 @@
-import HeaderOfTool from "./HeaderOfTool";
+import HeaderOfTool from "../HeaderOfTool";
 
 function DesignToolbar() {
   return (

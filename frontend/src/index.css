@@ -108,3 +108,23 @@
     margin: 0;
   }
 }
+
+@layer base {
+  .custom-color-input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: none;
+    background-color: transparent;
+  }
+
+  .custom-color-input::-webkit-color-swatch {
+    border-radius: 3px;
+    border: none;
+  }
+
+  .custom-color-input::-moz-color-swatch {
+    border-radius: 3px;
+    border: none;
+  }
+}

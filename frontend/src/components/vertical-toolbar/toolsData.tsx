@@ -1,8 +1,11 @@
 import { JSX } from "react";
-import TextToolbar from "./TextToolbar";
-import DesignToolbar from "./DesignToolbar";
+
+import DesignToolbar from "./design-toolbar/DesignToolbar";
 import ShapesToolbar from "./shapes-toolbar/ShapesToolbar";
 import ImageToolbar from "./image-toolbar/ImageToolbar";
+import FontTypes from "./text-toolbar/FontTypes";
+import TextToolbar from "./text-toolbar/TextToolbar";
+import StrokeToolbar from "./stroke-toolbar/StrokeToolbar";
 
 const toolsData: Record<string, JSX.Element> = {
   "image": <ImageToolbar />,
@@ -10,7 +13,9 @@ const toolsData: Record<string, JSX.Element> = {
   "design": <DesignToolbar />,
   "shape": <ShapesToolbar />,
   "ai": <></>,
-  "setting": <></>
+  "setting": <></>,
+  "font": <FontTypes />,
+  "stroke": <StrokeToolbar />
 }
 
 export default toolsData;

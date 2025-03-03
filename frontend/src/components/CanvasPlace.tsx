@@ -1,7 +1,8 @@
 import { useDispatch } from "react-redux";
 import { Canvas } from "fabric";
 import { useEffect, useRef } from "react";
-import { setCanvas } from "@/redux/canvas";
+import { setCanvas } from "@/redux/canvas.ts";
+import { showTheToolsOf } from "@/redux/horizontalToolbar";
 
 function CanvasPlace() {
   const dispatch = useDispatch();
@@ -15,9 +16,13 @@ function CanvasPlace() {
         backgroundColor: "#fff"
       });
 
+      initCanvas.on("selection:cleared", function () {
+        dispatch(showTheToolsOf("none"));
+      })
+
       initCanvas.renderAll();
 
-      dispatch(setCanvas(canvasRef.current));
+      dispatch(setCanvas(initCanvas));
 
       return () => {
         initCanvas.dispose();

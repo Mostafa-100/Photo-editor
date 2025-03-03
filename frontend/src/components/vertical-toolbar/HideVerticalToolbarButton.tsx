@@ -1,4 +1,4 @@
-import { showSidebar } from "@/redux/sidebar";
+import { showSidebar } from "@/redux/sidebar.ts";
 import { ChevronsLeft } from "lucide-react";
 import { useDispatch } from "react-redux";
 
