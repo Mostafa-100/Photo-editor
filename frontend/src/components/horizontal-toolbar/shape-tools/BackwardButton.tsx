@@ -10,6 +10,7 @@ function BackwardButton() {
   function backwardSelectedObject() {
     const selectedObject = canvas?.getActiveObject();
     canvas?.sendObjectBackwards(selectedObject);
+    canvas?.renderAll();
   }
 
   return (

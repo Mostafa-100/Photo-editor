@@ -10,6 +10,7 @@ function ForwardButton() {
   function forwardSelectedObject() {
     const selectedObject = canvas?.getActiveObject();
     canvas?.bringObjectForward(selectedObject);
+    canvas?.renderAll();
   }
 
   return (

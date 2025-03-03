@@ -5,6 +5,7 @@ import ChangeStrokeColorButton from "./ChangeBorderColorButton";
 import SetStrokeButton from "./SetStrokeButton";
 import BackwardButton from "./BackwardButton";
 import ForwardButton from "./ForwardButton";
+import DeleteButton from "./DeleteButton";
 
 function ShapeTools() {
   return (
@@ -16,7 +17,7 @@ function ShapeTools() {
       <BackwardButton />
       <ToolButton icon={<Layers className="h-4 w-4" />} />
       <ToolButton icon={<Copy className="h-4 w-4" />} />
-      <ToolButton icon={<Trash className="h-4 w-4" />} />
+      <DeleteButton />
     </div>
   )
 }
