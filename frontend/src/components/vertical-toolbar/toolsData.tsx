@@ -6,6 +6,7 @@ import ImageToolbar from "./image-toolbar/ImageToolbar";
 import FontTypes from "./text-toolbar/FontTypes";
 import TextToolbar from "./text-toolbar/TextToolbar";
 import StrokeToolbar from "./stroke-toolbar/StrokeToolbar";
+import OpacityToolbar from "./opacity-toolbar/OpacityToolbar";
 
 const toolsData: Record<string, JSX.Element> = {
   "image": <ImageToolbar />,
@@ -15,7 +16,8 @@ const toolsData: Record<string, JSX.Element> = {
   "ai": <></>,
   "setting": <></>,
   "font": <FontTypes />,
-  "stroke": <StrokeToolbar />
+  "stroke": <StrokeToolbar />,
+  "opacity": <OpacityToolbar />
 }
 
 export default toolsData;
