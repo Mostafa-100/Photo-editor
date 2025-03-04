@@ -11,6 +11,7 @@ function CopyButton() {
 
   function cloneSelectedObject() {
     const selectedObject = canvas?.getActiveObject();
+
     selectedObject?.clone(["width", "height"])
       .then((clone) => {
         clone.on("selected", function () {

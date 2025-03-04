@@ -9,7 +9,7 @@ function StrokeToolbar() {
   function handleOnChangeEvent(value: number[]) {
     const selectedObject = canvas?.getActiveObject();
 
-    if (!selectedObject?.fill) {
+    if (!selectedObject?.stroke) {
       selectedObject?.set("stroke", "#000");
     }
 

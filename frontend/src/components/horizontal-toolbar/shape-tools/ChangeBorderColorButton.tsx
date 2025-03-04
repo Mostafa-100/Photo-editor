@@ -7,7 +7,6 @@ function ChangeStrokeColorButton() {
   const { canvas } = useSelector((state: RootState) => state.canvas);
 
   function changeStrokeColorOfSelectedObject(e: ChangeEvent<HTMLInputElement>) {
-    console.log(e.target.value);
     const selectedObject = canvas?.getActiveObject();
     selectedObject?.set("stroke", e.target.value);
     canvas?.renderAll();
