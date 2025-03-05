@@ -11,7 +11,7 @@ function FontSizeInput({ ref }: FontSizeInputProps) {
 
   const { canvas } = useSelector((state: RootState) => state.canvas);
 
-  canvas?.on("selection:updated", async function () {
+  canvas?.on("after:render", async function () {
     await new Promise((res) => setTimeout(res, 20));
     const selectedText = canvas?.getActiveObject();
     const fontSizeInput = document.querySelector(".font-size-input") as HTMLInputElement;
