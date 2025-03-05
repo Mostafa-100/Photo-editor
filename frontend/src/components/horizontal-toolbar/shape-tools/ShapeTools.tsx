@@ -1,5 +1,5 @@
-import ChangeBackgroundColorButton from "./ChangeBackroundColorButton";
-import ChangeStrokeColorButton from "./ChangeBorderColorButton";
+import BackroundColorButton from "./BackroundColorButton";
+import StrokeColorButton from "./StrokeColorButton";
 import SetStrokeButton from "./SetStrokeButton";
 import BackwardButton from "./BackwardButton";
 import ForwardButton from "./ForwardButton";
@@ -10,8 +10,8 @@ import OpacityButton from "./OpacityButton";
 function ShapeTools() {
   return (
     <div className="flex gap-x-2 items-center">
-      <ChangeBackgroundColorButton />
-      <ChangeStrokeColorButton />
+      <BackroundColorButton />
+      <StrokeColorButton />
       <SetStrokeButton />
       <ForwardButton />
       <BackwardButton />

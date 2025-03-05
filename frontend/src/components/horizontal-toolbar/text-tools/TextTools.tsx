@@ -1,32 +1,41 @@
-import { AlignCenter, AlignLeft, AlignRight, ArrowDown, ArrowUp, Bold, Copy, Italic, Layers, Minus, Plus, Strikethrough, Trash, Underline } from "lucide-react";
+import { ArrowDown, ArrowUp, Layers } from "lucide-react";
 
-import { Input } from "../../ui/input";
-import ToolToggle from "../ToolToggle";
 import ToolButton from "../ToolButton";
 import FontSelect from "./FontSelect";
+import DeleteButton from "../shape-tools/DeleteButton";
+import CopyTextButton from "./CopyTextButton";
+import ColorInput from "./ColorInput";
+import BoldButton from "./BoldButton";
+import ItalicButton from "./ItalicButton";
+import UnderlineButton from "./UnderlineButton";
+import StrikethroughButton from "./StrikethroughButton";
+import DecreaseFontSizeButton from "./DecreaseFontSizeButton";
+import { useRef } from "react";
+import IncreaseFontSizedButton from "./IncreaseFontSizeButton";
+import FontSizeInput from "./FontSizeInput";
 
 function TextTools() {
+
+  const fontSizeInputRef = useRef<HTMLInputElement | null>(null);
+
   return (
     <div className="flex gap-x-2 items-center">
-      <input type="color" className="w-[28px] h-[31px] custom-color-input" />
+      <ColorInput />
       <FontSelect />
-      <ToolToggle icon={<Bold className="h-4 w-4" />} />
-      <ToolToggle icon={<Italic className="h-4 w-4" />} />
-      <ToolToggle icon={<Underline className="h-4 w-4" />} />
-      <ToolToggle icon={<Strikethrough className="h-4 w-4" />} />
-      <ToolToggle icon={<AlignLeft className="h-4 w-4" />} />
-      <ToolToggle icon={<AlignCenter className="h-4 w-4" />} />
-      <ToolToggle icon={<AlignRight className="h-4 w-4" />} />
+      <BoldButton />
+      <ItalicButton />
+      <UnderlineButton />
+      <StrikethroughButton />
 
-      <ToolButton icon={<Minus className="h-4 w-4" />} />
-      <Input type="number" defaultValue="16" className="size-9 px-1 text-center" />
-      <ToolButton icon={<Plus className="h-4 w-4" />} />
+      <DecreaseFontSizeButton inputRef={fontSizeInputRef} />
+      <FontSizeInput ref={fontSizeInputRef} />
+      <IncreaseFontSizedButton inputRef={fontSizeInputRef} />
 
       <ToolButton icon={<ArrowUp className="h-4 w-4" />} />
       <ToolButton icon={<ArrowDown className="h-4 w-4" />} />
       <ToolButton icon={<Layers className="h-4 w-4" />} />
-      <ToolButton icon={<Copy className="h-4 w-4" />} />
-      <ToolButton icon={<Trash className="h-4 w-4" />} />
+      <CopyTextButton />
+      <DeleteButton />
     </div>
   )
 }

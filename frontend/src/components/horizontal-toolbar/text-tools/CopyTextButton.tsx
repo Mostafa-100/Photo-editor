@@ -1,29 +1,31 @@
 import { Copy } from "lucide-react";
-import ToolButton from "../ToolButton";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "@/redux/store";
 import { showTheToolsOf } from "@/redux/horizontalToolbar";
+import { Toggle } from "@/components/ui/toggle";
 
-function CopyButton() {
+function CopyTextButton() {
 
   const { canvas } = useSelector((state: RootState) => state.canvas);
   const dispatch = useDispatch();
 
-  function cloneSelectedObject() {
-    const selectedObject = canvas?.getActiveObject();
+  function cloneSelectedText() {
+    const selectedText = canvas?.getActiveObject();
 
-    selectedObject?.clone()
+    selectedText?.clone()
       .then((clone) => {
         clone.on("selected", function () {
-          dispatch(showTheToolsOf("shape"));
+          dispatch(showTheToolsOf("text"));
         })
         canvas?.add(clone)
       });
   }
 
   return (
-    <ToolButton icon={<Copy className="h-4 w-4" />} onClick={cloneSelectedObject} />
+    <Toggle onClick={cloneSelectedText} aria-label="Toggle bold">
+      <Copy className="h-4 w-4" />
+    </Toggle>
   )
 }
 
-export default CopyButton;
+export default CopyTextButton;

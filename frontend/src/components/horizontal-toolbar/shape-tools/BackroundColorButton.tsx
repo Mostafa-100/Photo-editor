@@ -2,7 +2,7 @@ import { RootState } from "@/redux/store";
 import { ChangeEvent } from "react";
 import { useSelector } from "react-redux";
 
-function ChangeBackgroundColorButton() {
+function BackroundColorButton() {
 
   const { canvas } = useSelector((state: RootState) => state.canvas);
 
@@ -17,4 +17,4 @@ function ChangeBackgroundColorButton() {
   )
 }
 
-export default ChangeBackgroundColorButton;
+export default BackroundColorButton;

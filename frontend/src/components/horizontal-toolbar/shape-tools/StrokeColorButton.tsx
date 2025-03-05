@@ -2,7 +2,7 @@ import { RootState } from "@/redux/store";
 import { ChangeEvent } from "react";
 import { useSelector } from "react-redux";
 
-function ChangeStrokeColorButton() {
+function StrokeColorButton() {
 
   const { canvas } = useSelector((state: RootState) => state.canvas);
 
@@ -17,4 +17,4 @@ function ChangeStrokeColorButton() {
   )
 }
 
-export default ChangeStrokeColorButton;
+export default StrokeColorButton;

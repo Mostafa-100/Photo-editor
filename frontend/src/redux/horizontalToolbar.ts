@@ -30,8 +30,10 @@ const horizontalToolbarSlice = createSlice({
           state.areShapeToolsVisible = false;
           state.areTextToolsVisible = false;
           break;
+        default:
+          throw new Error("You need to choose the right tools");
       }
-    }
+    },
   }
 })
 
