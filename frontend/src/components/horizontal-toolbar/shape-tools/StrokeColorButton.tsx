@@ -12,8 +12,17 @@ function StrokeColorButton() {
     canvas?.renderAll();
   }
 
+  canvas?.on("after:render", async function () {
+    await new Promise((res) => setTimeout(res, 20));
+    const selectedShape = canvas?.getActiveObject();
+    const strokeColorInput = document.querySelector(".stroke-color-input") as HTMLInputElement;
+    if (strokeColorInput) {
+      strokeColorInput.value = selectedShape?.get("stroke");
+    }
+  })
+
   return (
-    <input type="color" className="w-[28px] h-[31px] custom-color-input" onChange={changeStrokeColorOfSelectedObject} />
+    <input type="color" className="stroke-color-input w-[28px] h-[31px] custom-color-input" onChange={changeStrokeColorOfSelectedObject} />
   )
 }
 

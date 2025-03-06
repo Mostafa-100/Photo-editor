@@ -1,19 +1,27 @@
 import { ArrowDown, ArrowUp, Blend, Copy, Layers, Paintbrush, ScanLine, Trash } from "lucide-react";
 import ToolButton from "../ToolButton";
+import SetStrokeButton from "../shape-tools/SetStrokeButton";
+import StrokeColorButton from "../shape-tools/StrokeColorButton";
+import BackroundColorButton from "../shape-tools/BackroundColorButton";
+import ForwardButton from "../shape-tools/ForwardButton";
+import BackwardButton from "../shape-tools/BackwardButton";
+import OpacityButton from "../shape-tools/OpacityButton";
+import CopyButton from "../shape-tools/CopyButton";
+import DeleteButton from "../shape-tools/DeleteButton";
 
 function ImageTools() {
   return (
     <div className="flex gap-x-2 items-center">
-      <input type="color" className="size-7 rounded-sm" />
-      <input type="color" className="size-7 rounded-sm" />
-      <ToolButton icon={<Paintbrush className="h-4 w-4" />} />
+      <BackroundColorButton />
+      <StrokeColorButton />
+      <SetStrokeButton />
       <ToolButton icon={<Blend className="h-4 w-4" />} />
       <ToolButton icon={<ScanLine className="h-4 w-4" />} />
-      <ToolButton icon={<ArrowUp className="h-4 w-4" />} />
-      <ToolButton icon={<ArrowDown className="h-4 w-4" />} />
-      <ToolButton icon={<Layers className="h-4 w-4" />} />
-      <ToolButton icon={<Copy className="h-4 w-4" />} />
-      <ToolButton icon={<Trash className="h-4 w-4" />} />
+      <ForwardButton />
+      <BackwardButton />
+      <OpacityButton />
+      <CopyButton />
+      <DeleteButton />
     </div>
   )
 }

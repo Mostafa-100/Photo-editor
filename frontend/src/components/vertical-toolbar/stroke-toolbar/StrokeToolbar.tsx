@@ -1,12 +1,20 @@
 import { Slider } from "@/components/ui/slider"
 import { RootState } from "@/redux/store";
+import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 
 function StrokeToolbar() {
 
   const { canvas } = useSelector((state: RootState) => state.canvas);
+  const [width, setWidth] = useState(0);
+
+  useEffect(() => {
+    const selectedObject = canvas?.getActiveObject();
+    setWidth(selectedObject?.get("strokeWidth"));
+  }, [])
 
   function handleOnChangeEvent(value: number[]) {
+    setWidth(value[0]);
     const selectedObject = canvas?.getActiveObject();
 
     if (!selectedObject?.stroke) {
@@ -33,7 +41,7 @@ function StrokeToolbar() {
     <>
       <div>
         <h3 className="mb-2 font-semibold">Stroke width</h3>
-        <Slider defaultValue={[0]} max={50} step={1} onValueChange={handleOnChangeEvent} />
+        <Slider defaultValue={[0]} max={50} step={1} onValueChange={handleOnChangeEvent} value={[width]} />
       </div>
       <div className="mt-5">
         <h3 className="mb-3 font-semibold">Stroke width</h3>

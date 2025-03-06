@@ -13,6 +13,9 @@ import DecreaseFontSizeButton from "./DecreaseFontSizeButton";
 import { useRef } from "react";
 import IncreaseFontSizedButton from "./IncreaseFontSizeButton";
 import FontSizeInput from "./FontSizeInput";
+import OpacityButton from "../shape-tools/OpacityButton";
+import ForwardButton from "../shape-tools/ForwardButton";
+import BackwardButton from "../shape-tools/BackwardButton";
 
 function TextTools() {
 
@@ -31,9 +34,9 @@ function TextTools() {
       <FontSizeInput ref={fontSizeInputRef} />
       <IncreaseFontSizedButton inputRef={fontSizeInputRef} />
 
-      <ToolButton icon={<ArrowUp className="h-4 w-4" />} />
-      <ToolButton icon={<ArrowDown className="h-4 w-4" />} />
-      <ToolButton icon={<Layers className="h-4 w-4" />} />
+      <ForwardButton />
+      <BackwardButton />
+      <OpacityButton />
       <CopyTextButton />
       <DeleteButton />
     </div>

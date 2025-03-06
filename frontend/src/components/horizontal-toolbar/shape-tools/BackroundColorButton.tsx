@@ -12,8 +12,17 @@ function BackroundColorButton() {
     canvas?.renderAll();
   }
 
+  canvas?.on("after:render", async function () {
+    await new Promise((res) => setTimeout(res, 20));
+    const selectedShape = canvas?.getActiveObject();
+    const backgroundColorInput = document.querySelector(".backgroundcolor-input") as HTMLInputElement;
+    if (backgroundColorInput) {
+      backgroundColorInput.value = selectedShape?.get("fill");
+    }
+  })
+
   return (
-    <input type="color" className="w-[28px] h-[31px] custom-color-input" onChange={changeBackgroundOfSelectedObject} />
+    <input type="color" className="backgroundcolor-input w-[28px] h-[31px] custom-color-input" onChange={changeBackgroundOfSelectedObject} />
   )
 }
 

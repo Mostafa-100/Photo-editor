@@ -1,6 +1,6 @@
 import { Input } from "@/components/ui/input"
 import { RootState } from "@/redux/store";
-import { ChangeEvent, RefObject, useEffect } from "react";
+import { ChangeEvent, RefObject } from "react";
 import { useSelector } from "react-redux";
 
 type FontSizeInputProps = {
