@@ -1,16 +1,10 @@
 import { Layers } from "lucide-react";
 import ToolButton from "../ToolButton";
-import { useDispatch } from "react-redux";
-import { setTheToolsToShow, showSidebar } from "@/redux/sidebar";
+import useAddTheToolKeyInReduxState from "@/hooks/useAddTheToolKeyInReduxState";
 
 function OpacityButton() {
 
-  const dispatch = useDispatch();
-
-  function addTheKeyInReduxState() {
-    dispatch(setTheToolsToShow("opacity"));
-    dispatch(showSidebar(true));
-  }
+  const addTheKeyInReduxState = useAddTheToolKeyInReduxState("opacity");
 
   return (
     <ToolButton icon={<Layers className="h-4 w-4" />} onClick={addTheKeyInReduxState} />

@@ -1,16 +1,10 @@
 import { Paintbrush } from "lucide-react";
 import ToolButton from "../ToolButton";
-import { useDispatch } from "react-redux";
-import { setTheToolsToShow, showSidebar } from "@/redux/sidebar";
+import useAddTheToolKeyInReduxState from "@/hooks/useAddTheToolKeyInReduxState";
 
 function SetStrokeButton() {
 
-  const dispatch = useDispatch();
-
-  function addTheKeyInReduxState() {
-    dispatch(setTheToolsToShow("stroke"));
-    dispatch(showSidebar(true));
-  }
+  const addTheKeyInReduxState = useAddTheToolKeyInReduxState("stroke");
 
   return (
     <ToolButton icon={<Paintbrush className="h-4 w-4" />} onClick={addTheKeyInReduxState} />

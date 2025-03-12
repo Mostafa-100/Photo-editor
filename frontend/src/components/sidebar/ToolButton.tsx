@@ -1,6 +1,5 @@
-import { setTheToolsToShow, showSidebar } from "@/redux/sidebar.ts";
+import useAddTheToolKeyInReduxState from "@/hooks/useAddTheToolKeyInReduxState";
 import { JSX } from "react";
-import { useDispatch } from "react-redux";
 
 type ButtonProps = {
   icon: JSX.Element;
@@ -10,12 +9,7 @@ type ButtonProps = {
 
 function ToolButton({ icon, title, keyName }: ButtonProps) {
 
-  const dispatch = useDispatch();
-
-  function addTheKeyInReduxState() {
-    dispatch(setTheToolsToShow(keyName));
-    dispatch(showSidebar(true));
-  }
+  const addTheKeyInReduxState = useAddTheToolKeyInReduxState(keyName);
 
   return (
     <button className="flex flex-col px-2 py-3 cursor-pointer hover:bg-neutral-200 justify-center items-center" onClick={addTheKeyInReduxState}>

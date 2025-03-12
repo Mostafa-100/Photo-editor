@@ -1,16 +1,10 @@
 import { ChevronDown } from "lucide-react";
-import { useDispatch } from "react-redux";
-import { setTheToolsToShow, showSidebar } from "@/redux/sidebar.ts";
 import { Button } from "@/components/ui/button";
+import useAddTheToolKeyInReduxState from "@/hooks/useAddTheToolKeyInReduxState";
 
 function FontSelect() {
 
-  const dispatch = useDispatch();
-
-  function addTheKeyInReduxState() {
-    dispatch(setTheToolsToShow('font'));
-    dispatch(showSidebar(true));
-  }
+  const addTheKeyInReduxState = useAddTheToolKeyInReduxState("font");
 
   return (
     <Button variant="ghost" onClick={addTheKeyInReduxState}>
