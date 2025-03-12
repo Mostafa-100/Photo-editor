@@ -3,6 +3,7 @@ import { useRef } from "react";
 
 function CanvasPlace() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+
   useSetupCanvas(canvasRef);
 
   return (
