@@ -2,9 +2,15 @@ import { RootState } from "@/redux/store";
 import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 
-function useManageSlider(property: string) {
+type useManageSliderParams = {
+  property: string;
+  defaultStateValue: number;
+  extraHandleChangeEventFunction?: CallableFunction
+}
+
+function useManageSlider({ property, defaultStateValue, extraHandleChangeEventFunction = () => null }: useManageSliderParams) {
   const { canvas } = useSelector((state: RootState) => state.canvas);
-  const [value, setValue] = useState(1);
+  const [value, setValue] = useState(defaultStateValue);
   const [rendered] = useState(true);
 
   canvas?.on("after:render", function () {
@@ -23,6 +29,9 @@ function useManageSlider(property: string) {
     setValue(value[0]);
     const selectedObject = canvas?.getActiveObject();
     selectedObject?.set(property, value[0]);
+
+    extraHandleChangeEventFunction(selectedObject);
+
     canvas?.renderAll();
   }
 
