@@ -29,11 +29,31 @@ class DatabaseSeeder extends Seeder
     Project::factory(10)->create();
 
     $defaultImages = [
-      ['id' => Str::uuid(), 'path' => 'default-images/NRQV-hBF10M-unsplash.jpg', 'owner_fullname' => 'bailey zindel'],
-      ['id' => Str::uuid(), 'path' => 'default-images/d4feocYfzAM-unsplash.jpg', 'owner_fullname' => 'damiano baschiera'],
-      ['id' => Str::uuid(), 'path' => 'default-images/h5wvMCdOV3w-unsplash.jpg', 'owner_fullname' => 'goutham krishna'],
-      ['id' => Str::uuid(), 'path' => 'default-images/EwKXn5CapA4-unsplash.jpg', 'owner_fullname' => 'jeremy bishop'],
-      ['id' => Str::uuid(), 'path' => 'default-images/mWRR1xj95hg-unsplash.jpg', 'owner_fullname' => 'christian joudrey'],
+      [
+        'id' => Str::uuid(),
+        'path' => 'default-images/NRQV-hBF10M-unsplash.jpg',
+        'owner_fullname' => 'bailey zindel'
+      ],
+      [
+        'id' => Str::uuid(),
+        'path' => 'default-images/d4feocYfzAM-unsplash.jpg',
+        'owner_fullname' => 'damiano baschiera'
+      ],
+      [
+        'id' => Str::uuid(),
+        'path' => 'default-images/h5wvMCdOV3w-unsplash.jpg',
+        'owner_fullname' => 'goutham krishna'
+      ],
+      [
+        'id' => Str::uuid(),
+        'path' => 'default-images/EwKXn5CapA4-unsplash.jpg',
+        'owner_fullname' => 'jeremy bishop'
+      ],
+      [
+        'id' => Str::uuid(),
+        'path' => 'default-images/mWRR1xj95hg-unsplash.jpg',
+        'owner_fullname' => 'christian joudrey'
+      ],
     ];
 
     DefaultImage::insert($defaultImages);
