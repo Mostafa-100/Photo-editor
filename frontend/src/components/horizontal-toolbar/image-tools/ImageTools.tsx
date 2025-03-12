@@ -2,7 +2,7 @@ import { ArrowDown, ArrowUp, Blend, Copy, Layers, Paintbrush, ScanLine, Trash } 
 import ToolButton from "../ToolButton";
 import SetStrokeButton from "../shape-tools/SetStrokeButton";
 import StrokeColorButton from "../shape-tools/StrokeColorButton";
-import BackroundColorButton from "../shape-tools/BackroundColorButton";
+import BackroundColorButton from "../shape-tools/ColorButton";
 import ForwardButton from "../shape-tools/ForwardButton";
 import BackwardButton from "../shape-tools/BackwardButton";
 import OpacityButton from "../shape-tools/OpacityButton";

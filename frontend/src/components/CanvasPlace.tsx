@@ -3,6 +3,7 @@ import { Canvas } from "fabric";
 import { useEffect, useRef } from "react";
 import { setCanvas } from "@/redux/canvas.ts";
 import { showTheToolsOf } from "@/redux/horizontalToolbar";
+import { showSidebar } from "@/redux/sidebar";
 
 function CanvasPlace() {
   const dispatch = useDispatch();
@@ -18,6 +19,10 @@ function CanvasPlace() {
 
       initCanvas.on("selection:cleared", function () {
         dispatch(showTheToolsOf("none"));
+      })
+
+      initCanvas.on("mouse:down", function (e) {
+        if (!e.target) dispatch(showSidebar(false));
       })
 
       initCanvas.renderAll();

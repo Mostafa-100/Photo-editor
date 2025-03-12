@@ -1,4 +1,4 @@
-import BackroundColorButton from "./BackroundColorButton";
+import BackroundColorButton from "./ColorButton";
 import StrokeColorButton from "./StrokeColorButton";
 import SetStrokeButton from "./SetStrokeButton";
 import BackwardButton from "./BackwardButton";

@@ -6,6 +6,14 @@ import { useEffect, useState } from "react";
 function OpacityToolbar() {
   const { canvas } = useSelector((state: RootState) => state.canvas);
   const [value, setValue] = useState(1);
+  const [rendered] = useState(true);
+
+  canvas?.on("after:render", function () {
+    if (rendered) {
+      const selectedObject = canvas?.getActiveObject();
+      setValue(selectedObject?.get("opacity"));
+    }
+  })
 
   useEffect(() => {
     const selectedObject = canvas?.getActiveObject();

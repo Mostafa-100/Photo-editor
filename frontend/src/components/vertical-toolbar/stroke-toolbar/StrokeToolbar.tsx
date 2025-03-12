@@ -1,17 +1,20 @@
 import { Slider } from "@/components/ui/slider"
 import { RootState } from "@/redux/store";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useSelector } from "react-redux";
 
 function StrokeToolbar() {
 
   const { canvas } = useSelector((state: RootState) => state.canvas);
   const [width, setWidth] = useState(0);
+  const [rendered] = useState(true);
 
-  useEffect(() => {
-    const selectedObject = canvas?.getActiveObject();
-    setWidth(selectedObject?.get("strokeWidth"));
-  }, [])
+  canvas?.on("after:render", function () {
+    if (rendered) {
+      const selectedObject = canvas?.getActiveObject();
+      setWidth(selectedObject?.get("strokeWidth"));
+    }
+  })
 
   function handleOnChangeEvent(value: number[]) {
     setWidth(value[0]);

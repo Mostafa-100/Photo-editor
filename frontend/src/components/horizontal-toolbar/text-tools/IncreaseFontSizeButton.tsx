@@ -14,11 +14,12 @@ function IncreaseFontSizedButton({ inputRef }: IncreaseFontSizedButtonProps) {
 
   function IncreaseFontSizeOfSelectedText() {
     const selectedText = canvas?.getActiveObject();
+    const input = inputRef.current;
 
-    if (!inputRef?.current) return;
+    if (!input) return;
 
-    inputRef.current.value = (parseInt(inputRef.current.value) + 1).toString();
-    selectedText?.set("fontSize", inputRef.current.value);
+    input.value = (parseInt(input.value) + 1).toString();
+    selectedText?.set("fontSize", input.value);
 
     canvas?.renderAll();
   }

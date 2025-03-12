@@ -14,14 +14,15 @@ function DecreaseFontSizeButton({ inputRef }: DecreaseFontSizeButtonProps) {
 
   function DecreaseFontSizeOfSelectedText() {
     const selectedText = canvas?.getActiveObject();
+    const input = inputRef.current;
 
-    if (parseInt(inputRef?.current?.value ?? "") < 12) return;
+    if (parseInt(input?.value ?? "") < 12) return;
 
-    if (!inputRef?.current) return;
+    if (!input) return;
 
-    inputRef.current.value = (parseInt(inputRef?.current.value) - 1).toString();
+    input.value = (parseInt(input.value) - 1).toString();
 
-    selectedText?.set("fontSize", parseInt(inputRef?.current.value));
+    selectedText?.set("fontSize", parseInt(input.value));
 
     canvas?.renderAll();
   }

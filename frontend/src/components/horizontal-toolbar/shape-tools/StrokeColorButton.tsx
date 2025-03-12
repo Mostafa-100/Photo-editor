@@ -1,10 +1,12 @@
 import { RootState } from "@/redux/store";
-import { ChangeEvent } from "react";
+import { ChangeEvent, useRef, useState } from "react";
 import { useSelector } from "react-redux";
 
 function StrokeColorButton() {
 
   const { canvas } = useSelector((state: RootState) => state.canvas);
+  const inputRef = useRef<HTMLInputElement>(null);
+  const [rendered] = useState(true);
 
   function changeStrokeColorOfSelectedObject(e: ChangeEvent<HTMLInputElement>) {
     const selectedObject = canvas?.getActiveObject();
@@ -13,16 +15,16 @@ function StrokeColorButton() {
   }
 
   canvas?.on("after:render", async function () {
-    await new Promise((res) => setTimeout(res, 20));
-    const selectedShape = canvas?.getActiveObject();
-    const strokeColorInput = document.querySelector(".stroke-color-input") as HTMLInputElement;
-    if (strokeColorInput) {
-      strokeColorInput.value = selectedShape?.get("stroke");
+    if (rendered) {
+      const selectedShape = canvas?.getActiveObject();
+      if (inputRef.current) {
+        inputRef.current.value = selectedShape?.get("stroke");
+      }
     }
   })
 
   return (
-    <input type="color" className="stroke-color-input w-[28px] h-[31px] custom-color-input" onChange={changeStrokeColorOfSelectedObject} />
+    <input type="color" ref={inputRef} className="w-[28px] h-[31px] custom-color-input" onChange={changeStrokeColorOfSelectedObject} />
   )
 }
 

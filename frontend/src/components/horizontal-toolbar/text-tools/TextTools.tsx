@@ -3,7 +3,6 @@ import { Bold, Italic, Strikethrough, Underline } from "lucide-react";
 import FontSelect from "./FontSelect";
 import DeleteButton from "../shape-tools/DeleteButton";
 import CopyTextButton from "./CopyTextButton";
-import ColorInput from "./ColorInput";
 import DecreaseFontSizeButton from "./DecreaseFontSizeButton";
 import { useRef } from "react";
 import IncreaseFontSizedButton from "./IncreaseFontSizeButton";
@@ -14,6 +13,14 @@ import BackwardButton from "../shape-tools/BackwardButton";
 import TextStyleButton from "./TextStyleButton";
 import { useSelector } from "react-redux";
 import { RootState } from "@/redux/store";
+import ColorButton from "../shape-tools/ColorButton";
+
+const textStylesBtns = [
+  { icon: <Bold className="h-4 w-4" />, attr: "fontWeight", defVal: "normal", newVal: "600" },
+  { icon: <Italic className="h-4 w-4" />, attr: "fontStyle", defVal: "normal", newVal: "italic" },
+  { icon: <Underline className="h-4 w-4" />, attr: "underline", defVal: false, newVal: true },
+  { icon: <Strikethrough className="h-4 w-4" />, attr: "linethrough", defVal: false, newVal: true },
+]
 
 function TextTools() {
 
@@ -23,15 +30,14 @@ function TextTools() {
 
   return (
     <div className="flex gap-x-2 items-center">
-      <ColorInput />
+      <ColorButton />
       <FontSelect />
-      <TextStyleButton canvas={canvas} icon={<Bold className="h-4 w-4" />} attribute="fontWeight" defaultValue="normal" newValue="600" />
 
-      <TextStyleButton canvas={canvas} icon={<Italic className="h-4 w-4" />} attribute="fontStyle" defaultValue="normal" newValue="italic" />
-
-      <TextStyleButton canvas={canvas} icon={<Underline className="h-4 w-4" />} attribute="underline" defaultValue={false} newValue={true} />
-
-      <TextStyleButton canvas={canvas} icon={<Strikethrough className="h-4 w-4" />} attribute="linethrough" defaultValue={false} newValue={true} />
+      {
+        textStylesBtns.map((btn) => {
+          return <TextStyleButton key={btn.attr} canvas={canvas} icon={btn.icon} attribute={btn.attr} defaultValue={btn.defVal} newValue={btn.newVal} />
+        })
+      }
 
       <DecreaseFontSizeButton inputRef={fontSizeInputRef} />
       <FontSizeInput ref={fontSizeInputRef} />

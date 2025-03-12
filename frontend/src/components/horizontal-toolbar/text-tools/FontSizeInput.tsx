@@ -1,6 +1,6 @@
 import { Input } from "@/components/ui/input"
 import { RootState } from "@/redux/store";
-import { ChangeEvent, RefObject } from "react";
+import { ChangeEvent, RefObject, useState } from "react";
 import { useSelector } from "react-redux";
 
 type FontSizeInputProps = {
@@ -10,13 +10,15 @@ type FontSizeInputProps = {
 function FontSizeInput({ ref }: FontSizeInputProps) {
 
   const { canvas } = useSelector((state: RootState) => state.canvas);
+  const [rendered] = useState(true);
 
   canvas?.on("after:render", async function () {
-    await new Promise((res) => setTimeout(res, 20));
-    const selectedText = canvas?.getActiveObject();
-    const fontSizeInput = document.querySelector(".font-size-input") as HTMLInputElement;
-    if (fontSizeInput) {
-      fontSizeInput.value = selectedText?.get("fontSize");
+    if (rendered) {
+      const selectedText = canvas?.getActiveObject();
+      const input = ref.current;
+      if (input) {
+        input.value = selectedText?.get("fontSize");
+      }
     }
   })
 
