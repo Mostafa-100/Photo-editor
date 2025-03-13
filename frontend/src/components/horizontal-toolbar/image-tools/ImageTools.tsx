@@ -1,4 +1,4 @@
-import { ArrowDown, ArrowUp, Blend, Copy, Layers, Paintbrush, ScanLine, Trash } from "lucide-react";
+import { Blend, ScanLine } from "lucide-react";
 import ToolButton from "../ToolButton";
 import SetStrokeButton from "../shape-tools/SetStrokeButton";
 import StrokeColorButton from "../shape-tools/StrokeColorButton";
