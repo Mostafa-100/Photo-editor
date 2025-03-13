@@ -1,7 +1,7 @@
 import { Bot, Image, LayoutDashboard, Pencil, Settings, Shapes, Type } from "lucide-react";
 
 const iconSize = 22;
-const strokeWidth = 22;
+const strokeWidth = 1;
 
 const toolsButtonData = [
   {
