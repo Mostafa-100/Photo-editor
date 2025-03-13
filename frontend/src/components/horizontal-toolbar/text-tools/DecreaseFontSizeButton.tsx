@@ -1,8 +1,7 @@
 import { Button } from "@/components/ui/button";
-import { RootState } from "@/redux/store";
+import useEditFontSize from "@/hooks/text-tools-hooks/useEditFontSize";
 import { Minus } from "lucide-react";
 import { RefObject } from "react";
-import { useSelector } from "react-redux";
 
 type DecreaseFontSizeButtonProps = {
   inputRef: RefObject<HTMLInputElement | null>;
@@ -10,25 +9,10 @@ type DecreaseFontSizeButtonProps = {
 
 function DecreaseFontSizeButton({ inputRef }: DecreaseFontSizeButtonProps) {
 
-  const { canvas } = useSelector((state: RootState) => state.canvas);
-
-  function DecreaseFontSizeOfSelectedText() {
-    const selectedText = canvas?.getActiveObject();
-    const input = inputRef.current;
-
-    if (parseInt(input?.value ?? "") < 12) return;
-
-    if (!input) return;
-
-    input.value = (parseInt(input.value) - 1).toString();
-
-    selectedText?.set("fontSize", parseInt(input.value));
-
-    canvas?.renderAll();
-  }
+  const decreaseFontSizeOfSelectedText = useEditFontSize({ inputRef, type: "decrease" });
 
   return (
-    <Button variant="ghost" onClick={DecreaseFontSizeOfSelectedText}>
+    <Button variant="ghost" onClick={decreaseFontSizeOfSelectedText}>
       <Minus className="h-4 w-4" />
     </Button>
   )

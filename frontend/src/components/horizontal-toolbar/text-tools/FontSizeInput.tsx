@@ -1,7 +1,6 @@
 import { Input } from "@/components/ui/input"
-import { RootState } from "@/redux/store";
-import { ChangeEvent, RefObject, useState } from "react";
-import { useSelector } from "react-redux";
+import useShowFontsizeOfSelectedObject from "@/hooks/text-tools-hooks/useShowFontsizeOfSelectedObject";
+import { RefObject } from "react";
 
 type FontSizeInputProps = {
   ref: RefObject<HTMLInputElement | null>,
@@ -9,25 +8,7 @@ type FontSizeInputProps = {
 
 function FontSizeInput({ ref }: FontSizeInputProps) {
 
-  const { canvas } = useSelector((state: RootState) => state.canvas);
-  const [rendered] = useState(true);
-
-  canvas?.on("after:render", async function () {
-    if (rendered) {
-      const selectedText = canvas?.getActiveObject();
-      const input = ref.current;
-      if (input) {
-        input.value = selectedText?.get("fontSize");
-      }
-    }
-  })
-
-  function changeFontSizeOfSelectedText(e: ChangeEvent<HTMLInputElement>) {
-    const selectedText = canvas?.getActiveObject();
-    selectedText?.set("fontSize", parseInt(e.target.value));
-    canvas?.renderAll();
-  }
-
+  const changeFontSizeOfSelectedText = useShowFontsizeOfSelectedObject(ref);
 
   return (
     <Input ref={ref} onChange={changeFontSizeOfSelectedText} type="number" min="12" defaultValue="16" className="font-size-input size-9 px-1 text-center" />

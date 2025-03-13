@@ -1,8 +1,7 @@
 import { Button } from "@/components/ui/button";
-import { RootState } from "@/redux/store";
+import useEditFontSize from "@/hooks/text-tools-hooks/useEditFontSize";
 import { Plus } from "lucide-react";
 import { RefObject } from "react";
-import { useSelector } from "react-redux";
 
 type IncreaseFontSizedButtonProps = {
   inputRef: RefObject<HTMLInputElement | null>
@@ -10,22 +9,10 @@ type IncreaseFontSizedButtonProps = {
 
 function IncreaseFontSizedButton({ inputRef }: IncreaseFontSizedButtonProps) {
 
-  const { canvas } = useSelector((state: RootState) => state.canvas);
-
-  function IncreaseFontSizeOfSelectedText() {
-    const selectedText = canvas?.getActiveObject();
-    const input = inputRef.current;
-
-    if (!input) return;
-
-    input.value = (parseInt(input.value) + 1).toString();
-    selectedText?.set("fontSize", input.value);
-
-    canvas?.renderAll();
-  }
+  const increaseFontSizeOfSelectedText = useEditFontSize({ inputRef, type: "increase" });
 
   return (
-    <Button variant="ghost" onClick={IncreaseFontSizeOfSelectedText}>
+    <Button variant="ghost" onClick={increaseFontSizeOfSelectedText}>
       <Plus className="h-4 w-4" />
     </Button>
   )
