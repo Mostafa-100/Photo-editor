@@ -12,8 +12,10 @@ function ToolsContainer() {
     <>
       {
         isSidebarVisible &&
-        <div className="relative w-[450px] bg-white px-4 py-5">
-          {toolsData[toolsToShow]}
+        <div className="relative w-[450px] bg-white">
+          <div className="h-[calc(100vh-92px)] overflow-y-auto overflow-x-hidden px-2 py-5">
+            {toolsData[toolsToShow]}
+          </div>
           <HideVerticalToolbarButton />
         </div>
       }
