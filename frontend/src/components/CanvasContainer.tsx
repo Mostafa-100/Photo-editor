@@ -18,9 +18,9 @@ function CanvasContainer() {
   }
 
   return (
-    <div className="w-full">
+    <div className="w-full flex flex-col h-[calc(100vh-57px)] overflow-auto">
       <HorizontalToolbar />
-      <div className="h-[calc(100%-86px)] py-2 overflow-y-auto grid place-items-center bg-neutral-200" onClick={clearCanvas}>
+      <div className="h-[calc(100%-86px)] grow p-2 overflow-auto grid place-items-center bg-neutral-200" onClick={clearCanvas}>
         <CanvasPlace />
       </div>
       <ProjectPageFooter />
