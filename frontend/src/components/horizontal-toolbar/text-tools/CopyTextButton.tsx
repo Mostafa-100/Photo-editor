@@ -1,6 +1,6 @@
 import { Copy } from "lucide-react";
 import { Toggle } from "@/components/ui/toggle";
-import useCopySelectedObject from "@/hooks/shape-tools-hooks/useCopySelectedObject";
+import useCopySelectedObject from "@/hooks/horizontal-shape-tools-hooks/useCopySelectedObject";
 
 function CopyTextButton() {
 

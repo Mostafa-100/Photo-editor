@@ -1,6 +1,6 @@
 import { Trash } from "lucide-react";
 import ToolButton from "../ToolButton";
-import useDeleteSelectedObject from "@/hooks/shape-tools-hooks/useDeleteSelectedObject";
+import useDeleteSelectedObject from "@/hooks/horizontal-shape-tools-hooks/useDeleteSelectedObject";
 
 function DeleteButton() {
 

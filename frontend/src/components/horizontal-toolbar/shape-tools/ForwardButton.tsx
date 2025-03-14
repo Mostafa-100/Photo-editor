@@ -1,6 +1,6 @@
 import { ArrowUp } from "lucide-react";
 import ToolButton from "../ToolButton";
-import useForwardSelectedObject from "@/hooks/shape-tools-hooks/useForwardSelectedObject";
+import useForwardSelectedObject from "@/hooks/horizontal-shape-tools-hooks/useForwardSelectedObject";
 function ForwardButton() {
 
   const forwardSelectedObject = useForwardSelectedObject();

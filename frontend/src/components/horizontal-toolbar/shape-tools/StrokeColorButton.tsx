@@ -1,4 +1,4 @@
-import useSetColor from "@/hooks/shape-tools-hooks/useSetColor";
+import useSetColor from "@/hooks/horizontal-shape-tools-hooks/useSetColor";
 import { useRef } from "react";
 
 function StrokeColorButton() {

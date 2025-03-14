@@ -1,6 +1,6 @@
 import { Copy } from "lucide-react";
 import ToolButton from "../ToolButton";
-import useCopySelectedObject from "@/hooks/shape-tools-hooks/useCopySelectedObject";
+import useCopySelectedObject from "@/hooks/horizontal-shape-tools-hooks/useCopySelectedObject";
 
 function CopyButton() {
 

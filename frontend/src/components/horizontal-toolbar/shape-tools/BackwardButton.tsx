@@ -1,6 +1,6 @@
 import { ArrowDown } from "lucide-react";
 import ToolButton from "../ToolButton";
-import useBackwardSelectedObject from "@/hooks/shape-tools-hooks/useBackwardSelectedObject";
+import useBackwardSelectedObject from "@/hooks/horizontal-shape-tools-hooks/useBackwardSelectedObject";
 
 function BackwardButton() {
 

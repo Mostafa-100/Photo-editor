@@ -1,5 +1,5 @@
 import { Toggle } from "@/components/ui/toggle";
-import useSetTextStyle from "@/hooks/text-tools-hooks/useSetTextStyle";
+import useSetTextStyle from "@/hooks/horizontal-text-tools-hooks/useSetTextStyle";
 import { JSX, useRef } from "react";
 
 type StyleButtonProps = {

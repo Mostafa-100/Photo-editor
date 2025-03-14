@@ -1,5 +1,5 @@
 import { Input } from "@/components/ui/input"
-import useShowFontsizeOfSelectedObject from "@/hooks/text-tools-hooks/useShowFontsizeOfSelectedObject";
+import useShowFontsizeOfSelectedObject from "@/hooks/horizontal-text-tools-hooks/useShowFontsizeOfSelectedObject";
 import { RefObject } from "react";
 
 type FontSizeInputProps = {

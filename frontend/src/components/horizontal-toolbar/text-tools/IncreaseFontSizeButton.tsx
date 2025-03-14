@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import useEditFontSize from "@/hooks/text-tools-hooks/useEditFontSize";
+import useEditFontSize from "@/hooks/horizontal-text-tools-hooks/useEditFontSize";
 import { Plus } from "lucide-react";
 import { RefObject } from "react";
 
