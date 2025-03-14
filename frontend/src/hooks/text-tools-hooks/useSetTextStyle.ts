@@ -6,7 +6,7 @@ type useSetTextStyleParams = {
   attribute: string;
   defaultValue: string | number | null | boolean;
   newValue: string | number | null | boolean;
-  toggleRef: RefObject<HTMLElement | null>;
+  toggleRef: RefObject<HTMLButtonElement | null>;
 }
 
 function useSetTextStyle({ attribute, defaultValue, newValue, toggleRef }: useSetTextStyleParams) {

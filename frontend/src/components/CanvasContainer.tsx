@@ -10,7 +10,7 @@ function CanvasContainer() {
   const { canvas } = useSelector((state: RootState) => state.canvas);
   const dispatch = useDispatch();
 
-  function clearCanvas(e) {
+  function clearCanvas(e: ) {
     if (e.target.nodeName == "CANVAS") return;
     canvas?.discardActiveObject();
     dispatch(showSidebar(false));
