@@ -5,7 +5,7 @@ import Toolbar from "./Toolbar";
 import FileMenu from "./FileMenu";
 import Logo from "./Logo";
 
-function Navbar() {
+function ProjectNavbar() {
   return (
     <nav className="py-2 px-5 bg-white border-b">
       <div className="flex justify-between">
@@ -24,4 +24,4 @@ function Navbar() {
   )
 }
 
-export default Navbar;
+export default ProjectNavbar;

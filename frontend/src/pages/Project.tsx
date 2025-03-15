@@ -1,14 +1,18 @@
 import CanvasContainer from "@/components/CanvasContainer";
 import ToolsContainer from "@/components/vertical-toolbar/ToolsContainer";
 import Sidebar from "@/components/sidebar/Sidebar";
+import ProjectNavbar from "@/components/project-navbar/ProjectNavbar";
 
 function Project() {
   return (
-    <div className="flex">
-      <Sidebar />
-      <ToolsContainer />
-      <CanvasContainer />
-    </div>
+    <>
+      <ProjectNavbar />
+      <div className="flex">
+        <Sidebar />
+        <ToolsContainer />
+        <CanvasContainer />
+      </div>
+    </>
   )
 }
 
