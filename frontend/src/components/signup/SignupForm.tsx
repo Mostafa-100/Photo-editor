@@ -2,6 +2,8 @@ import useRegisterUser from "@/hooks/useRegisterUser";
 import { Button } from "../ui/button";
 import { Input } from "../ui/input";
 import ErrorDisplay from "../ErrorDisplay";
+import AuthSubmitButton from "../AuthSubmitButton";
+import AuthLoadingButton from "../AuthLoadingButton";
 
 function SignupForm() {
 
@@ -15,18 +17,22 @@ function SignupForm() {
   return (
     <form onSubmit={handleSubmit}>
       <div className="mb-2">
-        <Input placeholder="Name" />
+        <Input name="name" type="text" placeholder="Name" />
         {errors?.name && <ErrorDisplay message={errors.name} />}
       </div>
       <div className="mb-2">
-        <Input placeholder="Email" />
+        <Input name="email" type="text" placeholder="Email" />
         {errors?.email && <ErrorDisplay message={errors.email} />}
       </div>
       <div className="mb-2">
-        <Input placeholder="Password" />
+        <Input name="password" type="text" placeholder="Password" />
         {errors?.password && <ErrorDisplay message={errors.password} />}
       </div>
-      <Button variant="default" className="w-full cursor-pointer">Continue</Button>
+      {
+        mutation.isPending ?
+          <AuthLoadingButton />
+          : <AuthSubmitButton text="continue" />
+      }
     </form>
   )
 }

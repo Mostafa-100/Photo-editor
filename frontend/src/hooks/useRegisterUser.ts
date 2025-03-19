@@ -14,7 +14,10 @@ function useRegisterUser() {
     mutationFn: (data: FormData) => {
       return axios.post(`${API_HOST}/api/register`, data);
     },
-    onSuccess: () => { dispatch(setShowLogin(true)) },
+    onSuccess: () => {
+      setErrors([]);
+      dispatch(setShowLogin(true))
+    },
     onError: (error) => {
       if (error?.response.status == 422) {
         setErrors(error.response.data.errors);
