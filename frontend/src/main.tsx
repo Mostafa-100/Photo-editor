@@ -15,9 +15,19 @@ import ProtectedRoute from './components/ProtectedRoute.tsx'
 const queryClient = new QueryClient();
 
 const router = createBrowserRouter([
-  { path: "/", element: <ProtectedRoute><App /></ProtectedRoute>, errorElement: <div>404 NOT FOUND</div> },
-  { path: "/project", element: <ProtectedRoute><Project /></ProtectedRoute> },
-  { path: "/login", element: <Login /> },
+  {
+    path: "/",
+    element: <ProtectedRoute><App /></ProtectedRoute>,
+    errorElement: <div>404 NOT FOUND</div>
+  },
+  {
+    path: "/project",
+    element: <ProtectedRoute><Project /></ProtectedRoute>
+  },
+  {
+    path: "/login",
+    element: <Login />
+  },
 ]);
 
 createRoot(document.getElementById('root')!).render(

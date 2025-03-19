@@ -1,13 +1,16 @@
 import useFetchUser from "@/hooks/useFetchUser";
-import { Navigate, Outlet } from "react-router-dom";
+import { ReactNode } from "react";
+import { Navigate } from "react-router-dom";
 
-function ProtectedRoute() {
-  const { query, isUserLoggedIn } = useFetchUser();
-  const { isLoading } = query;
+function ProtectedRoute({ children }: { children: ReactNode }) {
+  const { isLoading, isSuccess, isError } = useFetchUser();
 
   if (isLoading) return <></>;
 
-  return isUserLoggedIn ? <Outlet /> : <Navigate to="/login" />
+  if (isSuccess) return children;
+
+  if (isError) return <Navigate to="/login" />
+
 }
 
 export default ProtectedRoute;
