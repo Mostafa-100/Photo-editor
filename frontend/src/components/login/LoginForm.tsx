@@ -7,7 +7,7 @@ function LoginForm() {
       <Input placeholder="Email" className="mb-2" />
       <Input placeholder="Password" className="mb-2" />
       <Button type="submit" variant="default" className="w-full cursor-pointer">Continue</Button>
-    </form >
+    </form>
   )
 }
 
