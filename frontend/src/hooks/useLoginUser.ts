@@ -1,10 +1,13 @@
 import { API_HOST } from "@/lib/constants";
+import { setUserIsLoggedIn } from "@/redux/auth";
 import { useMutation } from "@tanstack/react-query";
 import axios from "axios";
 import { useState } from "react";
+import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
 function useLoginUser() {
+  const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const [errors, setErrors] = useState([]);
@@ -17,10 +20,10 @@ function useLoginUser() {
     },
     onSuccess: (data) => {
       localStorage.setItem("token", data.token);
+      dispatch(setUserIsLoggedIn(true));
       setErrors([]);
       setUserNotExistError([]);
       navigate("/");
-
     },
     onError: (error) => {
       if (error?.response.status == 422) {
