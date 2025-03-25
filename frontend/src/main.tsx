@@ -13,6 +13,7 @@ import Login from './pages/Login.tsx'
 import ProtectedRoute from './components/ProtectedRoute.tsx'
 import Home from './pages/Home.tsx'
 import GuestRoute from './GuestRoute.tsx'
+import Page404 from './pages/Page404.tsx'
 
 const queryClient = new QueryClient();
 
@@ -20,7 +21,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <ProtectedRoute><Home /></ProtectedRoute>,
-    errorElement: <div>404 NOT FOUND</div>
+    errorElement: <Page404 />
   },
   {
     path: "/project",

@@ -1,6 +1,6 @@
 import CanvasContainer from "@/components/CanvasContainer";
 import ToolsContainer from "@/components/vertical-toolbar/ToolsContainer";
-import Sidebar from "@/components/sidebar/Sidebar";
+import ProjectSidebar from "@/components/project-sidebar/ProjectSidebar";
 import ProjectNavbar from "@/components/project-navbar/ProjectNavbar";
 
 function Project() {
@@ -8,7 +8,7 @@ function Project() {
     <>
       <ProjectNavbar />
       <div className="flex">
-        <Sidebar />
+        <ProjectSidebar />
         <ToolsContainer />
         <CanvasContainer />
       </div>
