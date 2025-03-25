@@ -11,13 +11,15 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Project from './pages/Project.tsx';
 import Login from './pages/Login.tsx'
 import ProtectedRoute from './components/ProtectedRoute.tsx'
+import Home from './pages/Home.tsx'
+import GuestRoute from './GuestRoute.tsx'
 
 const queryClient = new QueryClient();
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <ProtectedRoute><App /></ProtectedRoute>,
+    element: <ProtectedRoute><Home /></ProtectedRoute>,
     errorElement: <div>404 NOT FOUND</div>
   },
   {
@@ -26,7 +28,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/login",
-    element: <Login />
+    element: <GuestRoute><Login /></GuestRoute>
   },
 ]);
 
