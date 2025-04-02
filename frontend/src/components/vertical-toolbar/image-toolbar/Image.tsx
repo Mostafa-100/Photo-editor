@@ -16,7 +16,6 @@ function Image({ src, owner }: ImageProps) {
 
   const dispatch = useDispatch();
 
-  // Do this
   function addImageToCanvas() {
     const image = new FabricImage(imageRef.current, {
       top: 20,

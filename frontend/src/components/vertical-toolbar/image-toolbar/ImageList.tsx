@@ -1,8 +1,7 @@
 import Image from "./Image";
 
 type DataProps = {
-  id: string,
-  path: string;
+  name: string;
   owner_fullname: string;
 }
 
@@ -13,7 +12,7 @@ type ImageListProps = {
 function ImageList({ data }: ImageListProps) {
   return (
     <div className="grid gap-2 grid-cols-2 mt-3">
-      {data?.map((i: DataProps) => <Image key={i.id} src={i.path} owner={i.owner_fullname} />)}
+      {data?.map((i: DataProps) => <Image key={Math.floor(Math.random() * 10000)} src={`/default-images/${i.name}`} owner={i.owner_fullname} />)}
     </div>
   )
 }
