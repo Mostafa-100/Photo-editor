@@ -4,11 +4,11 @@ const iconSize = 22;
 const strokeWidth = 1;
 
 const toolsButtonData = [
-  {
-    keyName: "design",
-    icon: <LayoutDashboard size={iconSize} strokeWidth={strokeWidth} />,
-    title: "Design"
-  },
+  // {
+  //   keyName: "design",
+  //   icon: <LayoutDashboard size={iconSize} strokeWidth={strokeWidth} />,
+  //   title: "Design"
+  // },
   {
     keyName: "image",
     icon: <Image size={iconSize} strokeWidth={strokeWidth} />,
@@ -25,21 +25,21 @@ const toolsButtonData = [
     title: "Shapes"
   },
 
-  {
-    keyName: "draw",
-    icon: <Pencil size={iconSize} strokeWidth={strokeWidth} />,
-    title: "Draw"
-  },
-  {
-    keyName: "ai",
-    icon: <Bot size={iconSize} strokeWidth={strokeWidth} />,
-    title: "Ai"
-  },
-  {
-    keyName: "setting",
-    icon: <Settings size={iconSize} strokeWidth={strokeWidth} />,
-    title: "Settings"
-  },
+  // {
+  //   keyName: "draw",
+  //   icon: <Pencil size={iconSize} strokeWidth={strokeWidth} />,
+  //   title: "Draw"
+  // },
+  // {
+  //   keyName: "ai",
+  //   icon: <Bot size={iconSize} strokeWidth={strokeWidth} />,
+  //   title: "Ai"
+  // },
+  // {
+  //   keyName: "setting",
+  //   icon: <Settings size={iconSize} strokeWidth={strokeWidth} />,
+  //   title: "Settings"
+  // },
 ]
 
 export default toolsButtonData;

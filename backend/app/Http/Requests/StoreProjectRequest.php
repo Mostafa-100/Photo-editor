@@ -22,6 +22,7 @@ class StoreProjectRequest extends FormRequest
   public function rules(): array
   {
     return [
+      "id" => "required|uuid",
       'content' => 'required|json',
       'title' => 'string|max:255',
       'width' => 'required|integer|gt:0|lt:2000',

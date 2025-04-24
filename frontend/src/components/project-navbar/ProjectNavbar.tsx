@@ -12,8 +12,8 @@ function ProjectNavbar() {
         <div className="flex items-center">
           <Logo />
           <FileMenu />
-          <Toolbar />
-          <AutoSaveStatus />
+          {/* <Toolbar /> */}
+          {/* <AutoSaveStatus /> */}
         </div>
         <div className="flex items-center gap-2">
           <ExportFonctionality />

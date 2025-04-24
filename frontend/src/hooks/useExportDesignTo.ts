@@ -15,7 +15,6 @@ function useExportDesignTo(exportType: ExportTypeType) {
     canvas.renderAll();
 
     if (exportType === "json") {
-      // Handle JSON export
       const json = canvas.toJSON();
       const jsonString = JSON.stringify(json, null, 2);
 
@@ -27,7 +26,6 @@ function useExportDesignTo(exportType: ExportTypeType) {
       link.href = url;
       link.click();
 
-      // Clean up
       URL.revokeObjectURL(url);
     } else {
       // Handle image export (existing code)

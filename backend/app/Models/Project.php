@@ -11,7 +11,7 @@ class Project extends Model
   use HasFactory, HasUuids;
 
   protected $fillable = [
-    'uuid',
+    'id',
     'title',
     'content',
     'width',

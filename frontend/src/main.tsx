@@ -24,7 +24,7 @@ const router = createBrowserRouter([
     errorElement: <Page404 />
   },
   {
-    path: "/project",
+    path: "/project/:projectId",
     element: <ProtectedRoute><Project /></ProtectedRoute>
   },
   {
@@ -34,11 +34,11 @@ const router = createBrowserRouter([
 ]);
 
 createRoot(document.getElementById('root')!).render(
-  <StrictMode>
+  // <StrictMode>
     <Provider store={store}>
       <QueryClientProvider client={queryClient}>
         <RouterProvider router={router} />
       </QueryClientProvider>
     </Provider>
-  </StrictMode>,
+  // </StrictMode>,
 )

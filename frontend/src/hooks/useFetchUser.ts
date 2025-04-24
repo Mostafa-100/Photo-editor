@@ -14,7 +14,7 @@ function useFetchUser() {
     },
     retry: (f, error) => {
       if (error instanceof AxiosError) {
-        return error.response.status == 401 ? false : true;
+        return error?.response?.status == 401 ? false : true;
       }
       return true;
     }
