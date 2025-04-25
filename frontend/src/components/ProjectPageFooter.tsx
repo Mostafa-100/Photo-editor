@@ -7,8 +7,8 @@ type ProjectPageFooterProps = {
 function ProjectPageFooter({ className }: ProjectPageFooterProps) {
   return (
     <div className={`bg-white p-2 ${className && className} flex justify-end gap-x-2`}>
-      <ZoomIn size={18} className="cursor-pointer" />
-      <ZoomOut size={18} className="cursor-pointer" />
+      {/* <ZoomIn size={18} className="cursor-pointer" />
+      <ZoomOut size={18} className="cursor-pointer" /> */}
     </div>
   )
 }
